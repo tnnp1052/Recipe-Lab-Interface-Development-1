@@ -1,0 +1,249 @@
+/*Screen 1*/
+:root {
+    --bg-color:#fef6e8;
+    --bg-text-color: black;
+
+    --primary-color: #fc9729;
+    --primary-text-color: white;
+
+    --secondary-color-1: #8C3C07; 
+    --secondary-text-color-1: white;
+
+    --secondary-color-2: #fef6e8;
+    --secondary-text-color-2:  #0B21B0;
+
+    --secondary-color-3: #0B21B0;
+    --secondary-text-color-3:  white;
+
+    --hyperlink-style: italic;
+    --hyperlink-no-underline: none;
+
+}
+
+.blog-name {
+    font-family: 'Galada', cursive;        
+    width: 100%;
+    text-align: center;
+    font-size: 7vw;
+}
+
+.blog-name-style {
+    color: var(--primary-color);
+    text-decoration: var(--hyperlink-no-underline);
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    line-height: 80%;
+}
+
+body {
+    font-family: 'Anaheim', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    font-size: 80%;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+}
+
+.nav-grid {
+    padding-left: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li a {
+    color: var(--primary-text-color);
+    text-decoration: var(--hyperlink-no-underline);
+    background-color: var(-secondary-color-2);
+    font-weight: 700;
+}
+
+.navbar a:hover {
+    color: var(--secondary-text-color-2);
+}
+
+.banner {
+    position: relative;
+}
+
+.banner-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+}
+
+h1 {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    color: white;
+    font-size: 10vw;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+h4 {
+    font-style: oblique;
+}
+
+.inside-list {
+    text-decoration: var(--hyperlink-no-underline);
+    color: var(--secondary-text-color-2);
+    font-weight: bolder;
+}
+
+.inside-list:hover {
+    background-color: var(--secondary-color-3);
+    color: var(--secondary-text-color-3);
+}
+
+.content {
+    margin: 20px;
+}
+
+.hyperlink {
+    font-style: var(--hyperlink-style);
+    color: var(--secondary-text-color-2);
+    text-decoration: var(--hyperlink-no-underline);
+}
+
+.hyperlink:hover {
+    background-color: var(--secondary-color-3);
+    color: var(--secondary-text-color-3);
+}
+
+.recipes-list {
+    color: var(--secondary-text-color-2);
+}
+
+.recipes-list ul li a:hover {
+    background-color: var(--secondary-color-3);
+    color: var(--secondary-text-color-3);
+}
+
+.others {
+    color: var(--secondary-text-color-2);
+    text-decoration: var(--hyperlink-no-underline);
+    font-weight: bolder;
+}
+
+footer{
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    text-align: center;
+    font-size: smaller;
+}
+
+
+/*Screen 2*/
+@media screen and (min-width:800px) {
+.site {
+    display: grid;
+    grid-template-areas: 
+    "blog-name blog-name blog-name"
+    "banner banner banner"
+    "navbar content content"
+    "related content content"
+    "copyright copyright copyright";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3,auto) 8fr auto;
+}
+
+.blog-name {
+    grid-area: blog-name;
+}
+
+.banner {
+    grid-area: banner;
+    position: relative;
+    align-content: center;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    grid-area: navbar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.content-container {
+    margin: 20px;
+}
+
+.related, .others {
+    background-color: var(--secondary-color-1);
+    color: var(--secondary-text-color-1);
+    grid-area: related;
+}
+
+.recipes-list {
+    color: var(--secondary-text-color-1);
+}
+
+.recipes-list ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+.related-recipes {
+    margin-left: 30px;
+}
+
+.recipes-list {
+    margin: 20px;
+}
+
+.copyright {
+    background-color: var(--primary-color);
+    grid-area: copyright;
+}
+
+footer {
+    font-size: 105%;
+}
+}
+
+
+/*Screen 3*/
+@media screen and (min-width:1040px) {
+    .site {
+        display: grid;
+        grid-template-areas: 
+        "blog-name blog-name blog-name"
+        "banner banner banner"
+        "navbar navbar navbar"
+        "content content related"
+        "copyright copyright copyright";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(5, auto);
+    }
+    
+    .nav-grid {
+        display: grid;
+        grid-template-areas: "search home about recipes contact";
+        text-align: center;
+    }
+    
+    .seacrh {grid-area: search;} 
+    .home {grid-area: home;} 
+    .about {grid-area: about;} 
+    .recipes {grid-area: recipes;} 
+    .contact {grid-area: contact;}
+}
